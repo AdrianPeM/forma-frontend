@@ -1,4 +1,4 @@
-# Forma.App
+# Forma Frontend
 
 Forma is a lightweight web application built for learning and experimentation. It allows users to create customizable forms, share them, and collect responses.
 
