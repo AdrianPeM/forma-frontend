@@ -1,46 +1,30 @@
-steps:
-  - name: Extract Issue Number from Branch Name
-    id: extract
-    run: |
-      BRANCH_NAME="${GITHUB_REF##*/}"
-      if [[ "$BRANCH_NAME" =~ ([0-9]+) ]]; then
-        echo "issue_number=${BASH_REMATCH[1]}" >> "$GITHUB_OUTPUT"
-      else
-        echo "No issue number found"
-        exit 1
-      fi
+- name: Update Project Item Status via GitHub CLI
+  env:
+    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  run: |
+    ISSUE_NUMBER=${{ steps.extract.outputs.issue_number }}
 
-  - name: Get Project Item ID for Issue
-    id: get_item
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    run: |
-      ISSUE_NUMBER=${{ steps.extract.outputs.issue_number }}
-      ITEM_ID=$(gh api graphql -f query='
-        query ($issueNumber: Int!) {
-          repository(owner: "your-owner", name: "your-repo") {
-            issue(number: $issueNumber) {
-              projectItems(first: 10) {
-                nodes {
-                  id
-                }
+    # Get the project item ID linked to the issue
+    ITEM_ID=$(gh api graphql -f query='
+      query ($issueNumber: Int!) {
+        repository(owner: "AdrianPeM", name: "forma-frontend") {
+          issue(number: $issueNumber) {
+            projectItems(first: 10) {
+              nodes {
+                id
               }
             }
           }
         }
-      ' -f issueNumber=$ISSUE_NUMBER --jq '.data.repository.issue.projectItems.nodes[0].id')
-      
-      if [ -z "$ITEM_ID" ] || [ "$ITEM_ID" == "null" ]; then
-        echo "No project item found for issue #$ISSUE_NUMBER"
-        exit 1
-      fi
+      }
+    ' -f issueNumber=$ISSUE_NUMBER --jq '.data.repository.issue.projectItems.nodes[0].id')
 
-      echo "item_id=$ITEM_ID" >> $GITHUB_OUTPUT
+    if [ -z "$ITEM_ID" ] || [ "$ITEM_ID" == "null" ]; then
+      echo "No project item found for issue #$ISSUE_NUMBER"
+      exit 1
+    fi
 
-  - name: Update Project Item Status
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    run: |
-      gh project item-edit --id ${{ steps.get_item.outputs.item_id }} \
-        --field-id PVTSSF_lAHOA55aJs4A6LFnzgu2GSI \
-        --option-id 47fc9ee4
+    # Now update the project item status field
+    gh project item-edit --id $ITEM_ID \
+      --field-id PVTSSF_lAHOA55aJs4A6LFnzgu2GSI \
+      --option-id 47fc9ee4
