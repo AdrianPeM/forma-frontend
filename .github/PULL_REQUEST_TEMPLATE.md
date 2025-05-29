@@ -1,32 +1,23 @@
-## Issue Type (check all that apply)
+### Issue type (check all applicable)
 
-- [ ] `feature` – New features
-- [ ] `bugfix` – Bug fixes
-- [ ] `hotfix` – Urgent fixes to production
-- [ ] `chore` – Maintenance, upgrades, config, documentation
-- [ ] `refactor` – Code restructuring without functional change
-- [ ] `style` – Style-related fixes
+- [ ] `feature` 	New features
+- [ ] `bugfix`  	Bug fixes
+- [ ] `hotfix`  	Urgent fixes to production
+- [ ] `chore`   	Maintenance, upgrades, config, documentation
+- [ ] `refactor` 	Code restructuring without feature or bug change
+- [ ] `style`    	Style-related fixes
 
----
+### Description
 
-## Description
+_Describe changes made_
 
-<!-- Describe the changes made in this PR -->
+### Related Tickets & Documents
+- Related Issue # (link)
 
----
+### Screenshots
 
-## Related Tickets & Documents
+_Paste here UI changes(if apply)_
 
-<!-- e.g. Closes #123 or Related to #456 -->
+### QA Instructions
 
----
-
-## Screenshots
-
-<!-- Paste here any UI-related changes -->
-
----
-
-## QA Instructions
-
-<!-- Describe how to test these changes -->
+_Describe instructions on how to test changes_
