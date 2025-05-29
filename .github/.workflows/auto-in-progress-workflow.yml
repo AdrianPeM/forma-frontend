@@ -25,5 +25,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh issue edit "${{ steps.extract.outputs.issue_number }}" \
-            --add-project <project_id> \
             --field "Status"="In Progress"
