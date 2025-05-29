@@ -1,30 +1,52 @@
-- name: Update Project Item Status via GitHub CLI
-  env:
-    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  run: |
-    ISSUE_NUMBER=${{ steps.extract.outputs.issue_number }}
+name: Mark Issue In Progress on Branch Creation
 
-    # Get the project item ID linked to the issue
-    ITEM_ID=$(gh api graphql -f query='
-      query ($issueNumber: Int!) {
-        repository(owner: "AdrianPeM", name: "forma-frontend") {
-          issue(number: $issueNumber) {
-            projectItems(first: 10) {
-              nodes {
-                id
+on:
+  create:
+    branches: [ '**' ]
+
+jobs:
+  update-project:
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/heads/')
+    steps:
+      - name: Extract Issue Number from Branch Name
+        id: extract
+        run: |
+          BRANCH_NAME="${GITHUB_REF##*/}"
+          if [[ "$BRANCH_NAME" =~ ([0-9]+) ]]; then
+            echo "issue_number=${BASH_REMATCH[1]}" >> "$GITHUB_OUTPUT"
+          else
+            echo "No issue number found"
+            exit 1
+          fi
+
+      - name: Update Project Item Status via GitHub CLI
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_NUMBER=${{ steps.extract.outputs.issue_number }}
+
+          # Get the project item ID linked to the issue
+          ITEM_ID=$(gh api graphql -f query='
+            query ($issueNumber: Int!) {
+              repository(owner: "AdrianPeM", name: "forma-frontend") {
+                issue(number: $issueNumber) {
+                  projectItems(first: 10) {
+                    nodes {
+                      id
+                    }
+                  }
+                }
               }
             }
-          }
-        }
-      }
-    ' -f issueNumber=$ISSUE_NUMBER --jq '.data.repository.issue.projectItems.nodes[0].id')
+          ' -f issueNumber=$ISSUE_NUMBER --jq '.data.repository.issue.projectItems.nodes[0].id')
 
-    if [ -z "$ITEM_ID" ] || [ "$ITEM_ID" == "null" ]; then
-      echo "No project item found for issue #$ISSUE_NUMBER"
-      exit 1
-    fi
+          if [ -z "$ITEM_ID" ] || [ "$ITEM_ID" == "null" ]; then
+            echo "No project item found for issue #$ISSUE_NUMBER"
+            exit 1
+          fi
 
-    # Now update the project item status field
-    gh project item-edit --id $ITEM_ID \
-      --field-id PVTSSF_lAHOA55aJs4A6LFnzgu2GSI \
-      --option-id 47fc9ee4
+          # Now update the project item status field
+          gh project item-edit --id $ITEM_ID \
+            --field-id PVTSSF_lAHOA55aJs4A6LFnzgu2GSI \
+            --option-id 47fc9ee4
