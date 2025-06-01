@@ -3,7 +3,7 @@ import { forwardRef } from "react"
 
 import clsx from "clsx"
 
-import type { ButtonPropsType } from "./Button.types"
+import type { ButtonPropsType } from "./types"
 
 import css from "./_Button.module.scss"
 

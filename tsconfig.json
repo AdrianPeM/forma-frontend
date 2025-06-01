@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@controls/*": ["./src/controls/*"],
+      "@controls*": ["./src/controls/index.ts"],
+      "@controlTypes*": ["./src/controls/types.ts"],
       "@genericTypes": ["./src/genericTypes.ts"]
     }
   },

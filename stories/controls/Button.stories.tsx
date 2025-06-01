@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 
-import ButtonControl from "@/controls/Button/Button"
-import type { ButtonPropsType } from "@/controls/Button/Button.types"
+import { Button as ButtonControl } from "@/controls"
+import type { ButtonPropsType } from "@/controls/types"
 
 /** Replace control component when is wrapped in forwardRef to reflect this in autodocs */
 function Button(args: ButtonPropsType) {
