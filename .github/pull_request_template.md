@@ -3,7 +3,7 @@
 - [ ] `feature` – New features
 - [ ] `bugfix` – Bug fixes
 - [ ] `hotfix` – Urgent fixes to production
-- [ ] `chore` – Maintenance, upgrades, config, documentation
+- [ ] `chore` – Maintenance, upgrades, config, documentation, DevOps
 - [ ] `refactor` – Code restructuring without functional change
 - [ ] `style` – Style-related fixes
 
@@ -12,6 +12,7 @@
 _Describe changes made_
 
 ### Related Tickets & Documents
+
 - Related Issue # (link)
 
 ### Screenshots
