@@ -19,7 +19,7 @@ const eslintConfig = [
     extends: ["next/core-web-vitals", "next/typescript"],
   }),
   {
-    files: ["**/*.{js,jsx,ts,tsx,mjs}"],
+    files: ["**/*.{js,jsx,ts,tsx,mjs}", ".storybook/**/*.{ts}"],
     languageOptions: {
       parser: tsEslintParser,
       parserOptions: {
