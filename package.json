@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@stylistic/eslint-plugin": "^4.4.0",
     "clsx": "^2.1.1",
     "next": "15.3.2",
     "react": "^19.0.0",
@@ -32,10 +34,12 @@
     "@vitest/coverage-v8": "^3.1.4",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-storybook": "^9.0.0",
     "playwright": "^1.52.0",
     "storybook": "^9.0.0",
     "typescript": "^5",
+    "typescript-eslint": "^8.33.0",
     "vitest": "^3.1.4"
   }
 }
