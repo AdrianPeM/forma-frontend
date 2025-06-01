@@ -1,7 +1,12 @@
-// Replace your-framework with the framework you are using, e.g. react-vite, nextjs, nextjs-vite, etc.
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 
-import Button from "@/controls/Button/Button"
+import ButtonControl from "@/controls/Button/Button"
+import type { ButtonPropsType } from "@/controls/Button/Button.types"
+
+/** Replace control component when is wrapped in forwardRef to reflect this in autodocs */
+function Button(args: ButtonPropsType) {
+  return <ButtonControl {...args} />
+}
 
 const meta = {
   component: Button,
@@ -10,7 +15,7 @@ const meta = {
     color: "primary",
     // children: "Default button",
     variant: "filled",
-    children: "asdad"
+    children: "Default button"
   },
   argTypes: {
     disabled: {
