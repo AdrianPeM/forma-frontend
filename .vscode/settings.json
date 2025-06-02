@@ -1,0 +1,32 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.fixAll.eslint": "always"
+  },
+  "editor.detectIndentation": false,
+  // "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2, // auto tab files
+  // "editor.defaultFormatter": "dbaeumer.vscode-eslint", // default formatter
+  // "eslint.run": "onSave", // Only runs when saving, not on every keystroke
+  "eslint.useFlatConfig": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  // "typescript.preferences.autoImportFileExcludePatterns": [
+  //   "src/controls/**/_*.ts",
+  //   "src/controls/**/_*.tsx"
+  // ],
+  "workbench.colorCustomizations": { // frontend color customization
+    "activityBar.background": "#2b2f47",
+    "activityBar.foreground": "#617da8",
+    "activityBarBadge.background": "#98b5e0",
+    "activityBarBadge.foreground": "#000000",
+    "titleBar.activeBackground": "#2b2f47",
+    "titleBar.activeForeground": "#617da8"
+  },
+  "workbench.tree.indent": 18
+}
