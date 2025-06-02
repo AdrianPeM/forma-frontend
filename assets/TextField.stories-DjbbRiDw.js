@@ -1,0 +1,3 @@
+import{j as n}from"./jsx-runtime-B3CkwUKM.js";import{T as a}from"./_TextField-TVssyJu-.js";import"./iframe-DO8_0VoW.js";const i={component:a,args:{disabled:!1,color:"primary"},argTypes:{disabled:{control:"boolean"},color:{control:"select",options:["primary","secondary"]},status:{control:"select",options:[void 0,"info","success","warning","error"]}},tags:["autodocs","!dev"],parameters:{layout:"centered"}},r={render:t=>n.jsx(a,{...t})};var e,o,s;r.parameters={...r.parameters,docs:{...(e=r.parameters)==null?void 0:e.docs,source:{originalSource:`{
+  render: args => <TextField {...args} />
+}`,...(s=(o=r.parameters)==null?void 0:o.docs)==null?void 0:s.source}}};const p=["Default"];export{r as Default,p as __namedExportsOrder,i as default};
