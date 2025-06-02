@@ -1,6 +1,4 @@
 
-import { forwardRef } from "react"
-
 import clsx from "clsx"
 
 import type { ButtonPropsType } from "./types"
@@ -28,4 +26,4 @@ function Button(props: ButtonPropsType) {
   )
 }
 
-export default forwardRef(Button)
+export default Button
