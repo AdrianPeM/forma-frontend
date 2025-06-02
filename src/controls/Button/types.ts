@@ -1,8 +1,8 @@
-import type { ComponentPropsWithRef, ForwardedRef, ReactNode } from "react"
+import type { ComponentProps, ReactNode } from "react"
 
 import type { ControlColorType, ControlStatusType } from "../controlGenericTypes"
 
-export type ButtonPropsType = ComponentPropsWithRef<"button"> &
+export type ButtonPropsType = ComponentProps<"button"> &
 {
   children: ReactNode
   className?: string
@@ -10,5 +10,3 @@ export type ButtonPropsType = ComponentPropsWithRef<"button"> &
   color?: ControlColorType
   status?: ControlStatusType
 }
-
-export type ButtonRef = ForwardedRef<HTMLButtonElement>
