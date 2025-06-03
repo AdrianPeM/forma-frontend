@@ -19,6 +19,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ### Get ready for development
 
+
 First, run the development server:
 
 ```bash
