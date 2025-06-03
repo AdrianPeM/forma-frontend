@@ -1,6 +1,5 @@
 import Image from "next/image"
 
-import "../controls/styles.scss"
 import styles from "./page.module.css"
 
 export default function Home() {
