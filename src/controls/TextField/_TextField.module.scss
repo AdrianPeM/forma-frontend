@@ -4,12 +4,10 @@
   flex-direction: column;
   padding: 0;
 
-  // when input has not label dont give space to input
   &:not(.no_label) {
     margin-top: 0.5rem;
   }
 
-  // When input has not label hide legend
   &.no_label {
     .wrapper .fieldset .legend {
       max-width: 0px;
@@ -17,7 +15,6 @@
     }
   }
 
-  // Move label to top
   &:has(.input:focus):not(.no_label),
   &:has(.input:not(:placeholder-shown)):not(.no_label) {
     .label {
@@ -35,15 +32,84 @@
     }
   }
 
-  // Set active color
-  &:has(.input:focus) {
-    .label {
-      color: var(--theme-color--primary);
+  &:has(.input:disabled) {
+    .label, .input {
+      color: var(--theme-color--text--disabled);
     }
 
     .wrapper .fieldset {
-      border-color: var(--theme-color--primary);
+      border-color: var(--theme-color--disabled);
     }
+  }
+
+  &:has(.input:not(:disabled)) {
+    &.info {
+      .label {
+        color: var(--theme-color--info);
+      }
+
+      .wrapper .fieldset {
+        border-color: var(--theme-color--info);
+      }
+    }
+
+    &.warning {
+      .label {
+        color: var(--theme-color--warning);
+      }
+
+      .wrapper .fieldset {
+        border-color: var(--theme-color--warning);
+      }
+    }
+
+    &.success {
+      .label {
+        color: var(--theme-color--success);
+      }
+
+      .wrapper .fieldset {
+        border-color: var(--theme-color--success);
+      }
+    }
+
+    &.error {
+      .label {
+        color: var(--theme-color--error);
+      }
+
+      .wrapper .fieldset {
+        border-color: var(--theme-color--error);
+      }
+    }
+  }
+
+  &:has(.input:focus:not(:disabled)) {
+    &.primary {
+      .label {
+        color: var(--theme-color--primary);
+      }
+
+      .wrapper .fieldset {
+        border-color: var(--theme-color--primary);
+      }
+    }
+
+    &.secondary {
+      .label {
+        color: var(--theme-color--secondary);
+      }
+
+      .wrapper .fieldset {
+        border-color: var(--theme-color--secondary);
+      }
+    }
+  }
+
+  .end_icon {
+    padding-right: 0.6rem;
+    max-height: 1rem;
+    max-width: 1rem;
   }
 
   .label {
@@ -69,7 +135,6 @@
     cursor: text;
     display: flex;
     align-items: center;
-    // border-radius: 4px;
 
     .input {
       color: var(--theme-color--text--primary);
@@ -84,7 +149,7 @@
       display: block;
       min-width: 0;
       width: 100%;
-      padding: 0.7rem 1rem;
+      padding: 0.8rem 1rem 0.6rem 1rem;
       outline: none;
       font-weight: 500;
 
@@ -107,7 +172,7 @@
       top: -5px;
       left: 0;
       margin: 0;
-      padding: 0 8px;
+      padding: 0 10px;
       pointer-events: none;
       border-radius: 0.6rem;
       border-style: solid;

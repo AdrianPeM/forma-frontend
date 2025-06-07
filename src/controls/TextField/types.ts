@@ -1,12 +1,13 @@
-import type { ComponentProps, CSSProperties } from "react"
+import type { ComponentProps, CSSProperties, ReactNode } from "react"
 
 import type { ControlColorType, ControlStatusType } from "../controlGenericTypes"
 
 type TextFieldCustomPropsType = {
-  containerClassName?: string
   label?: string
   status?: ControlStatusType
   color?: ControlColorType
+  EndIcon?: ReactNode
+  containerClassName?: string
   containerStyle?: CSSProperties
 }
 

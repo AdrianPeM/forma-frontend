@@ -7,6 +7,8 @@ const meta = {
   args: {
     disabled: false,
     color: "primary",
+    label: "Password",
+    type: "password"
   },
   argTypes: {
     disabled: {
@@ -21,7 +23,7 @@ const meta = {
       options: [undefined, "info", "success", "warning", "error"],
     },
   },
-  tags: ["autodocs", "!dev"],
+  tags: ["autodocs"],
   parameters: {
     layout: "centered",
   },
