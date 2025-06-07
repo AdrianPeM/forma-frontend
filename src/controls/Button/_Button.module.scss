@@ -1,199 +1,188 @@
 .button {
-    padding: 0.5rem 1rem;
-    border-radius: 18px;
-    border: 2px solid;
+  padding: 0.5rem 1rem;
+  border-radius: 18px;
+  border: 2px solid;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &.filled {
+    color: var(--theme-color--app-background);
+
+    &:disabled {
+      color: var(--theme-color--text--disabled);
+      border-color: var(--theme-color--disabled);
+      background-color: var(--theme-color--disabled);
+    }
 
     &:not(:disabled) {
-        cursor: pointer;
+      &.primary {
+        background-color: var(--theme-color--primary);
+        border-color: var(--theme-color--primary);
+        outline: var(--theme-color--primary);
+
+        &:hover,
+        &:active {
+          background-color: var(--theme-color--primary--light);
+          border-color: var(--theme-color--primary--light);
+          outline: var(--theme-color--primary--light);
+        }
+      }
+
+      &.secondary {
+        background-color: var(--theme-color--secondary);
+        border-color: var(--theme-color--secondary);
+        outline: var(--theme-color--secondary);
+
+        &:hover,
+        &:active {
+          background-color: var(--theme-color--secondary--light);
+          border-color: var(--theme-color--secondary--light);
+          outline: var(--theme-color--secondary--light);
+        }
+      }
+
+      &.error {
+        background-color: var(--theme-color--error);
+        border-color: var(--theme-color--error);
+        outline: var(--theme-color--error);
+
+        &:hover,
+        &:active {
+          background-color: var(--theme-color--error--light);
+          border-color: var(--theme-color--error--light);
+          outline: var(--theme-color--error--light);
+        }
+      }
+
+      &.success {
+        background-color: var(--theme-color--success);
+        border-color: var(--theme-color--success);
+        outline: var(--theme-color--success);
+
+        &:hover,
+        &:active {
+          background-color: var(--theme-color--success--light);
+          border-color: var(--theme-color--success--light);
+          outline: var(--theme-color--success--light);
+        }
+      }
+
+      &.warning {
+        background-color: var(--theme-color--warning);
+        border-color: var(--theme-color--warning);
+        outline: var(--theme-color--warning);
+
+        &:hover,
+        &:active {
+          background-color: var(--theme-color--warning--light);
+          border-color: var(--theme-color--warning--light);
+          outline: var(--theme-color--warning--light);
+        }
+      }
+
+      &.info {
+        background-color: var(--theme-color--info);
+        border-color: var(--theme-color--info);
+        outline: var(--theme-color--info);
+
+        &:hover,
+        &:active {
+          background-color: var(--theme-color--info--light);
+          border-color: var(--theme-color--info--light);
+          outline: var(--theme-color--info--light);
+        }
+      }
+    }
+  }
+
+  &.outlined {
+    background-color: var(--theme-color--app-background);
+
+    &:disabled {
+      color: var(--theme-color--disabled);
+      border-color: var(--theme-color--disabled);
     }
 
-    &.filled {
-        color: var(--theme-color--app-background);
+    &:not(:disabled) {
+      &.primary {
+        color: var(--theme-color--primary);
+        border-color: var(--theme-color--primary);
+        outline: var(--theme-color--primary);
 
-        &:disabled {
-            border-color: var(--theme-color--disabled);
-            background-color: var(--theme-color--disabled);
+        &:hover,
+        &:active {
+          color: var(--theme-color--primary--light);
+          border-color: var(--theme-color--primary--light);
+          outline: var(--theme-color--primary--light);
         }
+      }
 
-        &:not(:disabled) {
-            &.primary {
-                background-color: var(--theme-color--primary);
-                border-color: var(--theme-color--primary);
-                outline: var(--theme-color--primary);
+      &.secondary {
+        color: var(--theme-color--secondary);
+        border-color: var(--theme-color--secondary);
+        outline: var(--theme-color--secondary);
 
-                &:hover,
-                &:active,
-                &:focus {
-                    background-color: var(--theme-color--primary--light);
-                    border-color: var(--theme-color--primary--light);
-                    outline: var(--theme-color--primary--light);
-                }
-            }
-
-            &.secondary {
-                background-color: var(--theme-color--secondary);
-                border-color: var(--theme-color--secondary);
-                outline: var(--theme-color--secondary);
-
-                &:hover,
-                &:active,
-                &:focus {
-                    background-color: var(--theme-color--secondary--light);
-                    border-color: var(--theme-color--secondary--light);
-                    outline: var(--theme-color--secondary--light);
-                }
-            }
-
-            &.error {
-                background-color: var(--theme-color--error);
-                border-color: var(--theme-color--error);
-                outline: var(--theme-color--error);
-
-                &:hover,
-                &:active,
-                &:focus {
-                    background-color: var(--theme-color--error--light);
-                    border-color: var(--theme-color--error--light);
-                    outline: var(--theme-color--error--light);
-                }
-            }
-
-            &.success {
-                background-color: var(--theme-color--success);
-                border-color: var(--theme-color--success);
-                outline: var(--theme-color--success);
-
-                &:hover,
-                &:active,
-                &:focus {
-                    background-color: var(--theme-color--success--light);
-                    border-color: var(--theme-color--success--light);
-                    outline: var(--theme-color--success--light);
-                }
-            }
-
-            &.warning {
-                background-color: var(--theme-color--warning);
-                border-color: var(--theme-color--warning);
-                outline: var(--theme-color--warning);
-
-                &:hover,
-                &:active,
-                &:focus {
-                    background-color: var(--theme-color--warning--light);
-                    border-color: var(--theme-color--warning--light);
-                    outline: var(--theme-color--warning--light);
-                }
-            }
-
-            &.info {
-                background-color: var(--theme-color--info);
-                border-color: var(--theme-color--info);
-                outline: var(--theme-color--info);
-
-                &:hover,
-                &:active,
-                &:focus {
-                    background-color: var(--theme-color--info--light);
-                    border-color: var(--theme-color--info--light);
-                    outline: var(--theme-color--info--light);
-                }
-            }
+        &:hover,
+        &:active {
+          color: var(--theme-color--secondary--light);
+          border-color: var(--theme-color--secondary--light);
+          outline: var(--theme-color--secondary--light);
         }
+      }
+
+      &.error {
+        color: var(--theme-color--error);
+        border-color: var(--theme-color--error);
+        outline: var(--theme-color--error);
+
+        &:hover,
+        &:active {
+          color: var(--theme-color--error--light);
+          border-color: var(--theme-color--error--light);
+          outline: var(--theme-color--error--light);
+        }
+      }
+
+      &.success {
+        color: var(--theme-color--success);
+        border-color: var(--theme-color--success);
+        outline: var(--theme-color--success);
+
+        &:hover,
+        &:active {
+          color: var(--theme-color--success--light);
+          border-color: var(--theme-color--success--light);
+          outline: var(--theme-color--success--light);
+        }
+      }
+
+      &.warning {
+        color: var(--theme-color--warning);
+        border-color: var(--theme-color--warning);
+        outline: var(--theme-color--warning);
+
+        &:hover,
+        &:active {
+          color: var(--theme-color--warning--light);
+          border-color: var(--theme-color--warning--light);
+          outline: var(--theme-color--warning--light);
+        }
+      }
+
+      &.info {
+        color: var(--theme-color--info);
+        border-color: var(--theme-color--info);
+        outline: var(--theme-color--info);
+
+        &:hover,
+        &:active {
+          color: var(--theme-color--info--light);
+          border-color: var(--theme-color--info--light);
+          outline: var(--theme-color--info--light);
+        }
+      }
     }
-
-    &.outlined {
-        background-color: var(--theme-color--app-background);
-
-        &:disabled {
-            color: var(--theme-color--disabled);
-            border-color: var(--theme-color--disabled);
-        }
-
-        &:not(:disabled) {
-            &.primary {
-                color: var(--theme-color--primary);
-                border-color: var(--theme-color--primary);
-                outline: var(--theme-color--primary);
-
-                &:hover,
-                &:active,
-                &:focus {
-                    color: var(--theme-color--primary--light);
-                    border-color: var(--theme-color--primary--light);
-                    outline: var(--theme-color--primary--light);
-                }
-            }
-
-            &.secondary {
-                color: var(--theme-color--secondary);
-                border-color: var(--theme-color--secondary);
-                outline: var(--theme-color--secondary);
-
-                &:hover,
-                &:active,
-                &:focus {
-                    color: var(--theme-color--secondary--light);
-                    border-color: var(--theme-color--secondary--light);
-                    outline: var(--theme-color--secondary--light);
-                }
-            }
-
-            &.error {
-                color: var(--theme-color--error);
-                border-color: var(--theme-color--error);
-                outline: var(--theme-color--error);
-
-                &:hover,
-                &:active,
-                &:focus {
-                    color: var(--theme-color--error--light);
-                    border-color: var(--theme-color--error--light);
-                    outline: var(--theme-color--error--light);
-                }
-            }
-
-            &.success {
-                color: var(--theme-color--success);
-                border-color: var(--theme-color--success);
-                outline: var(--theme-color--success);
-
-                &:hover,
-                &:active,
-                &:focus {
-                    color: var(--theme-color--success--light);
-                    border-color: var(--theme-color--success--light);
-                    outline: var(--theme-color--success--light);
-                }
-            }
-
-            &.warning {
-                color: var(--theme-color--warning);
-                border-color: var(--theme-color--warning);
-                outline: var(--theme-color--warning);
-
-                &:hover,
-                &:active,
-                &:focus {
-                    color: var(--theme-color--warning--light);
-                    border-color: var(--theme-color--warning--light);
-                    outline: var(--theme-color--warning--light);
-                }
-            }
-
-            &.info {
-                color: var(--theme-color--info);
-                border-color: var(--theme-color--info);
-                outline: var(--theme-color--info);
-
-                &:hover,
-                &:active,
-                &:focus {
-                    color: var(--theme-color--info--light);
-                    border-color: var(--theme-color--info--light);
-                    outline: var(--theme-color--info--light);
-                }
-            }
-        }
-    }
+  }
 }

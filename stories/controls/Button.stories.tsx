@@ -32,7 +32,7 @@ const meta = {
       options: [undefined, "info", "success", "warning", "error"],
     },
   },
-  tags: ["autodocs", "!dev"],
+  tags: ["autodocs"],
   parameters: {
     layout: "centered",
   },
