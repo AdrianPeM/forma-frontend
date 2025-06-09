@@ -4,34 +4,27 @@ import { useTranslations } from "next-intl"
 
 import FileIcon from "@assets-icons/file.svg"
 import GlobeIcon from "@assets-icons/globe.svg"
-import NextIcon from "@assets-icons/next.svg"
+import NextJsIcon from "@assets-icons/nextjs.svg"
+import TerminalIcon from "@assets-icons/terminal.svg"
 import VercelIcon from "@assets-icons/vercel.svg"
-import WindowIcon from "@assets-icons/window.svg"
 
-import LanguageSwitcher from "./LanguageSelector"
+import LanguageSelector from "./LanguageSelector"
 
 import styles from "./page.module.css"
 
 export default function Home() {
-
+  const t_general = useTranslations("general")
   const t = useTranslations("pages/home")
 
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src={NextIcon}
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
+        <Image priority className={styles.logo} src={NextJsIcon} alt={t_general("icons.nextjs")} width={180} height={38} />
         <ol>
-          <li>{t("get_started.text")}<code>{t("get_started.code")}</code>.</li>
-          <li>{t("save_changes")}.</li>
+          <li>{t("body.get_started.text")}<code>{t("body.get_started.code")}</code>.</li>
+          <li>{t("body.save_changes")}.</li>
         </ol>
-        <LanguageSwitcher />
+        <LanguageSelector />
       </main>
       <footer className={styles.footer}>
         <a
@@ -39,55 +32,32 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            src={VercelIcon}
-            alt="Vercel logomark"
-            width={16}
-            height={16}
-          />
-          Deploy now
+          <Image src={VercelIcon} alt={t_general("icons.vercel")} width={16} height={16} />
+          {t("footer.deploy")}
         </a>
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src={FileIcon}
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          <Image aria-hidden src={FileIcon} alt={t_general("icons.file")} width={16} height={16} />
+          {t("footer.learn")}
         </a>
         <a
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src={WindowIcon}
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+          <Image aria-hidden src={TerminalIcon} alt={t_general("icons.terminal")} width={16} height={16} />
+          {t("footer.examples")}
         </a>
         <a
           href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src={GlobeIcon}
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
+          <Image aria-hidden src={GlobeIcon} alt={t_general("icons.globe")} width={16} height={16} />
+          {t("footer.go_nextjs")}
         </a>
       </footer>
     </div>

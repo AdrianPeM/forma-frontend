@@ -1,2 +1,9 @@
 {
+  "icons": {
+    "file": "File icon",
+    "globe": "Globe icon",
+    "nextjs": "Next.js logo",
+    "terminal": "Terminal icon",
+    "vercel": "Vercel logomark"
+  }
 }
