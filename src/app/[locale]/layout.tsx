@@ -8,7 +8,7 @@ import { routing } from "../../i18n/routing"
 import "./globals.css"
 import "../../controls/styles.scss"
 
-const font = Montserrat()
+const font = Montserrat({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Create Next App",
