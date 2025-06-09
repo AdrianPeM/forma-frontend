@@ -4,7 +4,7 @@ import { useRef } from "react"
 
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 
-import { Button } from "@/controls"
+import { Button } from "@controls"
 
 const meta = {
   component: Button,
