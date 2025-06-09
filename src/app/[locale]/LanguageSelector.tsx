@@ -5,7 +5,7 @@ import { useLocale } from "next-intl"
 import { usePathname, useRouter } from "../../i18n/navigation"
 import { localeKeys } from "../../i18n/routing"
 
-export default function LanguageSwitcher() {
+export default function LanguageSelector() {
   const router = useRouter()
   const pathname = usePathname()
   const locale = useLocale()
