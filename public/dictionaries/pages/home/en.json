@@ -1,0 +1,7 @@
+{
+  "get_started": {
+    "text": "Get started by editing.",
+    "code": "src/app/page.tsx"
+  },
+  "save_changes": "Save and see your changes instantly"
+}
