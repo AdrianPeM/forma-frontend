@@ -1,7 +1,15 @@
 {
-  "get_started": {
-    "text": "Comienza editando",
-    "code": "src/app/page.tsx"
+  "body": {
+    "get_started": {
+      "text": "Comienza editando",
+      "code": "src/app/page.tsx"
+    },
+    "save_changes": "Guarda y mira tus cambios al instante"
   },
-  "save_changes": "Guarda y mira tus cambios al instante"
+  "footer": {
+    "deploy": "Desplegar ahora",
+    "examples": "Ejemplos",
+    "go_nextjs": "Ir a nextjs.org →",
+    "learn": "Aprende"
+  }
 }

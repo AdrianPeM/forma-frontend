@@ -1,11 +1,11 @@
 ### Issue type (check all applicable)
 
-- [ ] `feature` – New features
-- [ ] `bugfix` – Bug fixes
-- [ ] `hotfix` – Urgent fixes to production
-- [ ] `chore` – Maintenance, upgrades, config, documentation, DevOps
-- [ ] `refactor` – Code restructuring without functional change
-- [ ] `style` – Style-related fixes
+- [ ] feature
+- [ ] bugfix
+- [ ] hotfix
+- [ ] chore
+- [ ] refactor
+- [ ] style
 
 ### Description
 
@@ -13,7 +13,7 @@ _Describe changes made_
 
 ### Related Tickets & Documents
 
-- Related Issue # (link)
+_Issue name and number # (issue link)_
 
 ### Screenshots
 
