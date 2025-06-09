@@ -1,12 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite"
 
-import { TextField } from "@/controls"
+import { TextField } from "@controls"
 
 const meta = {
   component: TextField,
   args: {
     disabled: false,
     color: "primary",
+    label: "Password",
+    type: "password"
   },
   argTypes: {
     disabled: {
@@ -21,7 +23,7 @@ const meta = {
       options: [undefined, "info", "success", "warning", "error"],
     },
   },
-  tags: ["autodocs", "!dev"],
+  tags: ["autodocs"],
   parameters: {
     layout: "centered",
   },

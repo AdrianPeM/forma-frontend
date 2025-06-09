@@ -6,10 +6,11 @@ import css from "./_TextField.module.scss"
 
 function TextField(props: TextFieldPropsType) {
   const {
-    containerClassName,
     label,
     status,
     color = "primary",
+    EndIcon,
+    containerClassName,
     containerStyle = {},
     ...restProps
   } = props
@@ -31,6 +32,9 @@ function TextField(props: TextFieldPropsType) {
           className={inputClassName}
           placeholder={label}
         />
+        {EndIcon && (
+          <div className={css.end_icon}>{EndIcon}</div>
+        )}
         <fieldset className={css.fieldset}>
           <legend className={css.legend}>{label}</legend>
         </fieldset>
